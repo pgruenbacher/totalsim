@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on My New Hugo Site</title>
+    <link>http://localhost:1313/blog/</link>
+    <description>Recent content in Blogs on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 21 May 2015 20:52:14 -0400</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>test2</title>
+      <link>http://localhost:1313/blog/test2/</link>
+      <pubDate>Thu, 21 May 2015 20:52:14 -0400</pubDate>
+      
+      <guid>http://localhost:1313/blog/test2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>http://localhost:1313/blog/test/</link>
+      <pubDate>Wed, 20 May 2015 20:55:55 -0400</pubDate>
+      
+      <guid>http://localhost:1313/blog/test/</guid>
+      <description>
+
+&lt;h1 id=&#34;this-is-a-test-article:b128b7694e4de962e0088bcb1bcb254f&#34;&gt;This is a test article&lt;/h1&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

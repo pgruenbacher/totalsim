@@ -1,0 +1,16 @@
+baseurl = "http://yourSiteHere/"
+languageCode = "en-us"
+title = "My New Hugo Site"
+
+
+contentdir = "content"
+layoutdir = "layouts"
+publishdir = "public"
+
+[params]
+  description = "TotalSim website, repositories, and blog"
+  author = "TotalSim LLC"
+
+[[menu.main]]
+    name = "Blog"
+    url = "/posts"
