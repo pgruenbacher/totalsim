@@ -19,19 +19,22 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:url" content="http://yourSiteHere/blog/" />
+<meta property="og:url" content="http://localhost:1313/blog/" />
 
 
   
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/base-min.css">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/pure-min.css">
+  
+  
   
   
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.5.0/grids-responsive-min.css">
   
   
 
-  <link rel="stylesheet" href="http://yoursitehere//css/redlounge.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/normalized.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/skeleton.css">
+  <link rel="stylesheet" href="http://localhost:1313//css/custom.css">
+
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='//fonts.googleapis.com/css?family=Raleway:400,200,100,700,300,500,600,800' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
@@ -41,7 +44,7 @@
   <link rel="shortcut icon" href="/favicon.png">
 
   
-  <link href="http://yourSiteHere/blog/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
+  <link href="http://localhost:1313/blog/index.xml" rel="alternate" type="application/rss+xml" title="My New Hugo Site" />
 
     
   
@@ -49,6 +52,12 @@
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+  
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://localhost:1313//js/site.js"></script>
 
 
   
@@ -69,7 +78,7 @@
 
     <nav class="nav">
       <ul class="nav-list">
-        <li class="nav-item"><span class="nav-item-separator">//</span><a href="http://yoursitehere/">Home</a></li>
+        <li class="nav-item"><span class="nav-item-separator">//</span><a href="http://localhost:1313/">Home</a></li>
         
           <li class="nav-item"><span class="nav-item-separator">//</span><a href="/posts/">Blog</a></li>
         
@@ -81,8 +90,6 @@
         
       </ul>
     </nav>
-
-    
 
   </div>
 </div>
@@ -117,7 +124,7 @@
                         <div class="post-categories">
                         
                         
-                            <a class="post-category post-category-development" href="http://yoursitehere//categories/development">Development</a>
+                            <a class="post-category post-category-development" href="http://localhost:1313//categories/development">Development</a>
                         
                         </div>
                     
@@ -153,7 +160,7 @@
                         <div class="post-categories">
                         
                         
-                            <a class="post-category post-category-development" href="http://yoursitehere//categories/development">Development</a>
+                            <a class="post-category post-category-development" href="http://localhost:1313//categories/development">Development</a>
                         
                         </div>
                     
@@ -181,5 +188,8 @@
     </div>
   </div>
   
-</body>
+<script>document.write('<script src="http://'
+        + (location.host || 'localhost').split(':')[0]
+		+ ':1313/livereload.js?mindelay=10"></'
+        + 'script>')</script></body>
 </html>

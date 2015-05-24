@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div class="header">
+
+    {{ if .Site.Params.sidebartitle }}<h1 class="brand-title">{{ .Site.Params.sidebartitle }}</h1>{{ end }}
+    {{ if .Site.Params.sidebartagline }}<h2 class="brand-tagline">{{ .Site.Params.sidebartagline }}</h2>{{ end }}
+
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><span class="nav-item-separator"></span><a href="{{ .Site.BaseURL }}">Home</a></li>
+        {{ .Section }}
+        {{ $section := (index .Site.Sections "wiki")}}
+        {{ range $section.Pages }}
+        {{ . }}
+        {{ .Title }}
+        {{ end }}
+
+        {{ range .Site.Menus.wiki }}
+            {{ .Pasdf}}
+          {{  .HasChildren }}
+          }
+        {{end}}
+      </ul>
+    </nav>
+
+  </div>
+</div>

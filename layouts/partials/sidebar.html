@@ -1,29 +1,36 @@
-<div class="sidebar pure-u-1 pure-u-md-1-4">
-  <div class="header">
-    {{ partial "sidebarheader.html" . }}
+<!--sidebar start-->
+<aside>
+    <div class="sidebar" class="nav-collapse">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu">
+          {{ $currentNode := . }}
+          {{ range .Site.Menus.wiki }}
+          {{ if .HasChildren }}
 
-    {{ if .Site.Params.sidebartitle }}<h1 class="brand-title">{{ .Site.Params.sidebartitle }}</h1>{{ end }}
-    {{ if .Site.Params.sidebartagline }}<h2 class="brand-tagline">{{ .Site.Params.sidebartagline }}</h2>{{ end }}
-
-    <nav class="nav">
-      <ul class="nav-list">
-        <li class="nav-item"><span class="nav-item-separator">//</span><a href="{{ .Site.BaseUrl }}">Home</a></li>
-        {{ range .Site.Menus.main }}
-          <li class="nav-item"><span class="nav-item-separator">//</span><a href="{{ .Url }}">{{ .Name }}</a></li>
-        {{ end }}
-      </ul>
-    </nav>
-
-    {{ if .Site.Menus.social }}
-    <div class="social-buttons">
-      {{ range .Site.Menus.social }}
-        {{ if .Url }}
-        <a href="{{ .Url }}" target="_blank">{{ .Pre }}</a>
-        {{ end }}
-      {{ end }}
-      
+            <li class="sub-menu{{if $currentNode.HasMenuCurrent "main" . }} active{{end}}">
+            <a href="javascript:;" class="">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+                <span class="menu-arrow arrow_carrot-right"></span>
+            </a>
+            <ul class="sub">
+                {{ range .Children }}
+                <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.Url}}"> {{ .Name }} </a> </li>
+                {{ end }}
+            </ul>
+          {{else}}
+            <li>
+            <a class="" href="{{.Url}}">
+                {{ .Pre }}
+                <span>{{ .Name }}</span>
+            </a>
+          {{end}}
+          </li>
+          {{end}}
+            <li> <a href="https://github.com/spf13/hugo/issues" target="blank">Questions and Issues</a> </li>
+            <li> <a href="#" target="blank">Edit this Page</a> </li>
+        </ul>
+        <!-- sidebar menu end-->
     </div>
-    {{ end }}
-
-  </div>
-</div>
+</aside>
+<!--sidebar end-->
