@@ -1,3 +1,11 @@
+/* ___________Basic__________--*/
+a{
+  color:#0645ad;
+}
+a:visited{
+  color:#0b0080
+}
+
 /* ____________Navbar________________*/
 .navbar {
   display: none; 
@@ -118,4 +126,32 @@
   .popover-item:first-child .popover-link:hover:after {
     border-bottom-color: #33C3F0; }
 
+}
+
+/* ________ Table of Contents _______*/
+.toc{
+  padding: 14px;
+  float:right;
+  border: 1px solid #aaa;
+  background-color:#f9f9f9;
+}
+.toc ul,.toc ol{
+  margin-bottom: 0;
+  margin-top:0;
+}
+.toc li{
+  margin-bottom: 0;
+  margin-top:0;
+}
+.toc-label{
+  font-weight:bold;
+  font-size:1.4rem;
+}
+
+/* ____________Wiki SideBar Navigation_________*/
+.sidebar{
+  float:right;
+  padding:14px;
+  border: 1px solid #aaa;
+  background-color: #f9f9f9;
 }
