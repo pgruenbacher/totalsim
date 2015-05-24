@@ -15,14 +15,14 @@
           <span>{{ .Name }}</span>
           <span class="menu-arrow fa {{if $currentNode.HasMenuCurrent "wiki" . }}fa-angle-down{{else}}fa-angle-right{{end}}"></span>
         </a>
-        <ul class="sub{{if $currentNode.HasMenuCurrent "main" . }} open{{end}}">
+        <ul class="sub{{if $currentNode.HasMenuCurrent "wiki" . }} open {{ end }}">
           {{ range .Children }}
           <li{{if $currentNode.IsMenuCurrent "main" . }} class="active"{{end}}><a href="{{.Url}}"> {{ .Name }} </a> </li>
           {{ end }}
         </ul>
         {{else}}
         <li>
-          <a class="" href="{{.Url}}">
+          <a class="" href="{{.URL}}">
             {{ .Pre }}
             <!--<i class="icon_house_alt"></i>-->
             <span>{{ .Name }}</span>

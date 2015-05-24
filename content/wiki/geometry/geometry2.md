@@ -1,10 +1,13 @@
 +++
 Categories = ["Development"]
 Description = "Description appears here"
-Tags = ["cfd"]
-date = "2015-05-23T21:51:49-04:00"
-menu = "main"
+Tags = ["cfd", "wiki"]
+date = "2015-05-23T21:58:46-04:00"
 title = "geometry2"
+
+[menu]
+  [menu.wiki]
+  parent="geometry"
 
 +++
 
