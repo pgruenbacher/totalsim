@@ -26,3 +26,13 @@ publishdir = "public"
 
 [[menu.wiki]]
   name="scripts"
+
+[[menu.wiki]]
+  name="geometry"
+
+[[menu.wiki]]
+  name="sub-geometry"
+  parent="geometry"
+  identifier="sub-geometry"
+
+

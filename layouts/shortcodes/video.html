@@ -1,0 +1,35 @@
+
+  {{ if .Get "autoplay" }} 
+  autoplay
+  
+  {{ end }}
+<video 
+  id="really-cool-video" 
+  class="video-js vjs-default-skin vjs-big-play-centered" 
+  controls
+   preload="auto" 
+
+   {{ if .Get "autoplay" }}
+    autoplay
+   {{ end }}
+   {{ if .Get "loop" }}
+    loop
+   {{ end }}
+
+   width="{{if .Get "width"}}{{.Get "width" }}{{else}}640{{end}}" 
+   height="{{if .Get "height"}}{{.Get "height" }}{{else}}264{{end}}" 
+
+   poster="{{if .Get "poster"}}{{.Get "poster" }}{{else}}/imgs/2013Nascar-RotGallery_0.jpg{{end}}"
+
+   data-setup='{}'>
+    <source 
+      src="{{if .Get "src"}}{{.Get "src" }}{{else}}/vids/TotalSim.mp4{{end}}"
+     type="{{if .Get "type"}}{{.Get "type" }}{{else}}video/mp4{{end}}">
+     {{if .Get "chapters"}}
+    <track kind="chapters" src="{{.Get "chapters"}}" srclang="en" label="English" default>
+    {{ end }}
+    <!-- <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a web browser
+      that <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+    </p> -->
+</video>

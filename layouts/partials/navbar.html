@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="container">
+  <!-- _______Left Side Menu Items_________ -->
     <ul class="navbar-list">
-      <li class="navbar-item"><a class="navbar-link" href="#intro">Intro</a></li>
       {{ $Site := .Site }}
       {{ range .Site.Params.navbardirs }}
       {{ $navbardir := . }}
@@ -27,6 +27,15 @@
         {{ end }}
       </li>
       {{ end }}
+      <!-- News link -->
+      <li class="navbar-item">
+        <a class="navbar-link" href="/news"> News </a>
+    </ul>
+    <!-- _______Right Side Menu Items______________ -->
+    <ul class="navbar-list right">
+        <a class="navbar-link" href="/wiki"> Wiki </a>
+      <li class="navbar-item">
+      </li>
     </ul>
   </div>
 </nav>

@@ -2,8 +2,9 @@
 <body>
     <div class="container">
     {{ partial "navbar.html" . }}
+    {{ partial "sidebar.html" . }}
     <div class="row">
-        <div class="eleven columns">
+        <div class="nine columns">
              <!-- ____Banner________-->
             {{ if .Params.banner }}
             <div class="content-banner-image" style="{{ if .Params.bannerheight }}height: {{ .Params.bannerheight }}px;{{ end }}">
@@ -40,22 +41,31 @@
                         </div>
                     {{ end }}
 
-
-
-                    <!-- _____Table of Contents________  -->
-                    {{ if not .Params.notoc }}
-                    {{ if .TableOfContents }}
-                    <div class="toc">
-                        <span class="toc-label">Contents</span>
-                        {{ .TableOfContents }}
-                    </div>
-                    {{ end }}
+                    {{ if .Params.socialsharing }}
+                        {{ partial "socialsharing.html" . }}
                     {{ end }}
 
-                    <!-- _______ CONTENT_________________ -->
+                    {{ if .Params.bannerinline }}
+                        <img src="{{ .Params.bannerinline }}" class="pure-img content-banner-image-inline" />
+                    {{ end }}
+
+
+            <!-- _____Table of Contents________  -->
+            {{ if not .Params.notoc }}
+            {{ if .TableOfContents }}
+            <div class="toc">
+                <span class="toc-label">Contents</span>
+                {{ .TableOfContents }}
+            </div>
+            {{ end }}
+            {{ end }}
+
                     {{ .Content }}
             
-            
+                    {{ if .Params.socialsharing }}
+                        {{ partial "socialsharing.html" . }}
+                    {{ end }}
+
                     {{ if .Params.tags }}
                         <div class="tags-list">
                             <span class="dark-red">Tags</span><span class="decorative-marker">//</span>

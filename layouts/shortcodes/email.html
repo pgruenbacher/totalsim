@@ -1,0 +1,8 @@
+{{$email := .Get "email" }}
+{{ $then := split $email "@"}}
+<a 
+class="reflectable" 
+href="mailto:{{ index $then 1 }}*{{ index $then 0 }}?subject={{.Get "subject"}}&body={{ .Get "body" }}">
+{{ index $then 1 }}||{{index $then 0}}
+</a>
+

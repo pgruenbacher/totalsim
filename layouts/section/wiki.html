@@ -2,6 +2,7 @@
 <body>
     <div class="container">
     {{ partial "navbar.html" . }}
+    {{ partial "sidebar.html" . }}
 
     <div class="content">
       <a name="top"></a>
@@ -11,13 +12,11 @@
         {{ range .Data.Pages }}
           <section  class="post">
             <header class="post-header">
-            <!-- _________Thumbnail ___________ -->
             {{ if .Params.thumbnail }}
             <div class="post-avatar-wrapper">
               <img class="post-avatar" alt="" src="{{ .Params.thumbnail }}">
             </div>
             {{ end }}
-
             <h1 class="post-title">
               <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             </h1>
@@ -31,20 +30,17 @@
                     {{ if not .Params.noauthor }}
                         {{ if .Params.author }}By <a class="post-author" {{ if .Params.authorlink }}href="{{ .Params.authorlink }}"{{ end }}>{{ .Params.author }}</a>{{ end }}
                     {{ end }}
-              <!-- ___ reading time _____- -->
               {{ if not .Params.noread }}
                 <span class="post-reading-time"><i class="fa fa-clock-o"></i> <em>{{.ReadingTime}} min. read</em></span>
               {{ end }}
-              <!-- ______categories_________ -->
-              {{ if .Params.categories }}
-                  <div class="post-categories">
-                  {{ $Site := .Site }}
-                  {{ range .Params.categories }}
-                      <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>
-                  {{ end }}
-                  </div>
-              {{ end }}
-
+                    {{ if .Params.categories }}
+                        <div class="post-categories">
+                        {{ $Site := .Site }}
+                        {{ range .Params.categories }}
+                            <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>
+                        {{ end }}
+                        </div>
+                    {{ end }}
             </p>
             <article class="post-summary">
                 {{ .Summary }}
