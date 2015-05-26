@@ -1,4 +1,4 @@
-{{ partial "doctype.html" . }}
+
 <head>
   <title>
     {{ .Title }}{{ if ne .Title .Site.Title }} // {{ .Site.Title }}{{ end }}
@@ -56,5 +56,4 @@
     <link rel="stylesheet" type="text/css" href="{{ .Site.Params.categoriescss }}">
   {{ end }}
 
-  {{ partial "headend.html" . }}
 </head>

@@ -24,15 +24,20 @@ publishdir = "public"
   name = "News"
   url = "/news"
 
-[[menu.wiki]]
-  name="scripts"
 
+# WIKI_MENUS_START
 [[menu.wiki]]
-  name="geometry"
-
+name="wiki"
+parent=""
 [[menu.wiki]]
-  name="sub-geometry"
-  parent="geometry"
-  identifier="sub-geometry"
+name="geometry"
+parent="wiki"
+[[menu.wiki]]
+name="sub-geometry"
+parent="geometry"
+[[menu.wiki]]
+name="scripts"
+parent="wiki"
+# END
 
 
