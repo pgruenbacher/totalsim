@@ -29,7 +29,7 @@ RUN cp -r /site-source/public /app/
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD sites-enabled/ /etc/nginx/sites-enabled/
-ADD auth/.htpasswd /etc/nginx/auth/.htpasswd
+ADD auth/ /etc/nginx/auth/
 #ADD app/ /app/
 
 EXPOSE 80

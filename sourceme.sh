@@ -2,7 +2,7 @@
 
 export PATH=$PATH:./bin
 
-alias serve='hugo server -w'
+alias serve='rm -rf public; hugo server -w'
 alias deploy='deploy.sh'
 
 cat << EOF

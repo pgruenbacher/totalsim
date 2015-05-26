@@ -87,41 +87,9 @@
                         </div>
                     {{ end }}
                   </section>
-                  {{ if not .Params.nocomment }}
-                    {{ template "_internal/disqus.html" . }}
-                  {{ end }}
-                
               {{ partial "footer.html" . }}
             </div>
         </div>
     </div>
-    {{ if .Params.totop }}
-        <script type="text/javascript">
-            onscroll = function() {
-              var toTopVisible = false;
-              var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-              if (scrollTop > 1000) {
-                if (!toTopVisible) {
-                  document.getElementById('nav-to-top').style.display = 'block';
-                }
-              } else {
-                if (scrollTop < 1000 || toTopVisible) {
-                  document.getElementById('nav-to-top').style.display = 'none';
-                }
-              }
-            };
-        </script>
-    {{ end }}
-
-    {{ if .Params.socialsharing }}
-        <script type="text/javascript">
-            function popupShare(url) {
-                window.open(url, '_blank', 'scrollbars,resizable,height=525,width=600');
-                return false;
-            }
-        </script>
-    {{ end }}
-
-  {{ partial "bodyend.html" . }}
 </body>
 </html>
