@@ -90,6 +90,7 @@ function doLogoAnimation(){
         // Set up the starting positions
         path.style.strokeDasharray = length + ' ' + length;
         path.style.strokeDashoffset = length;
+        console.log(length)
         // Trigger a layout so styles are calculated & the browser
         // picks up the starting position before animating
         path.getBoundingClientRect();

@@ -10,7 +10,7 @@
              <!-- ____Banner________-->
             {{ if .Params.banner }}
             <div class="content-banner-image" style="{{ if .Params.bannerheight }}height: {{ .Params.bannerheight }}px;{{ end }}">
-                <img src="{{ .Params.banner }}" class="pure-img" style="{{ if .Params.bannerfill }}width: 100%;{{ end }}" />
+                <img src="{{ .Site.BaseURL }}/{{ .Params.banner }}" class="pure-img" style="{{ if .Params.bannerfill }}width: 100%;{{ end }}" />
             </div>
             {{ end }}
 
