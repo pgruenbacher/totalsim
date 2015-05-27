@@ -5,13 +5,12 @@
       {{ partial "svg.html" . }}
     </div>
     {{ partial "navbar.html" . }}
-    {{ partial "sidebar.html" . }}
     <div class="row">
-        <div class="nine columns">
+        <div class="eleven columns">
              <!-- ____Banner________-->
             {{ if .Params.banner }}
             <div class="content-banner-image" style="{{ if .Params.bannerheight }}height: {{ .Params.bannerheight }}px;{{ end }}">
-                <img src="{{ .Params.banner }}" class="pure-img" style="{{ if .Params.bannerfill }}width: 100%;{{ end }}" />
+                <img src="{{ .Site.BaseURL }}{{ .Params.banner }}" class="pure-img" style="{{ if .Params.bannerfill }}width: 100%;{{ end }}" />
             </div>
             {{ end }}
 
@@ -39,41 +38,32 @@
                     {{ if .Params.categories }}
                         <div class="post-categories">
                         {{ range .Params.categories }}
-                            <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>
+                            <a class="post-category post-category-{{ . | urlize }}" href="{{ $Site.BaseURL}}categories/{{ . | urlize }}">{{ . }}</a>
                         {{ end }}
                         </div>
                     {{ end }}
 
-                    {{ if .Params.socialsharing }}
-                        {{ partial "socialsharing.html" . }}
+
+
+                    <!-- _____Table of Contents________  -->
+                    {{ if not .Params.notoc }}
+                    {{ if .TableOfContents }}
+                    <div class="toc">
+                        <span class="toc-label">Contents</span>
+                        {{ .TableOfContents }}
+                    </div>
+                    {{ end }}
                     {{ end }}
 
-                    {{ if .Params.bannerinline }}
-                        <img src="{{ .Params.bannerinline }}" class="pure-img content-banner-image-inline" />
-                    {{ end }}
-
-
-            <!-- _____Table of Contents________  -->
-            {{ if not .Params.notoc }}
-            {{ if .TableOfContents }}
-            <div class="toc">
-                <span class="toc-label">Contents</span>
-                {{ .TableOfContents }}
-            </div>
-            {{ end }}
-            {{ end }}
-
+                    <!-- _______ CONTENT_________________ -->
                     {{ .Content }}
             
-                    {{ if .Params.socialsharing }}
-                        {{ partial "socialsharing.html" . }}
-                    {{ end }}
-
+            
                     {{ if .Params.tags }}
                         <div class="tags-list">
                             <span class="dark-red">Tags</span><span class="decorative-marker">//</span>
                             {{ range .Params.tags }}
-                            <a class="post-tag post-tag-{{ . | urlize }}" href="{{ $Site.BaseURL}}/tags/{{ . | urlize }}">{{ . }}</a>,
+                            <a class="post-tag post-tag-{{ . | urlize }}" href="{{ $Site.BaseURL}}tags/{{ . | urlize }}">{{ . }}</a>,
                             {{ end }}
                         </div>
                     {{ end }}
@@ -96,7 +86,7 @@
                             {{ end }}
                         </div>
                     {{ end }}
-                  </section>                
+                  </section>
               {{ partial "footer.html" . }}
             </div>
         </div>

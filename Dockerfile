@@ -17,20 +17,15 @@ ENV PATH $PATH:$GOROOT/bin:$GOPATH/bin
 RUN go get -v github.com/spf13/hugo
 RUN go install github.com/spf13/hugo
 
-#ONBUILD ADD . /site-source
-#ONBUILD RUN cd /site-source && hugo
-
 ADD . /site-source
-RUN cd /site-source && hugo
+RUN cd /site-source && hugo --baseUrl="http://localhost" --source="./src" --config="./src/config.toml"
 
-#ONBUILD RUN cp -R /site-source/public /app/
-RUN cp -r /site-source/public /app/
+RUN cp -r /site-source/src/public /app/
 
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-ADD sites-enabled/ /etc/nginx/sites-enabled/
+ADD ./src/sites-enabled/ /etc/nginx/sites-enabled/
 ADD auth/ /etc/nginx/auth/
-#ADD app/ /app/
 
 EXPOSE 80
 

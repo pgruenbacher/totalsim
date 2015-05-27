@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "My New Hugo Site"
 
 
-contentdir = "content"
+contentdir = "../content"
 layoutdir = "layouts"
 publishdir = "public"
 
@@ -29,15 +29,23 @@ publishdir = "public"
 [[menu.wiki]]
 name="wiki"
 parent=""
+identifier="wiki"
 [[menu.wiki]]
 name="geometry"
-parent="wiki"
+parent=""
+identifier="geometry"
 [[menu.wiki]]
 name="sub-geometry"
 parent="geometry"
+identifier="sub-geometry"
+[[menu.wiki]]
+name="honda"
+parent=""
+identifier="honda"
 [[menu.wiki]]
 name="scripts"
-parent="wiki"
+parent=""
+identifier="scripts"
 # END
 
 
