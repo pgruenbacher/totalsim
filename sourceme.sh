@@ -14,17 +14,18 @@ alias deploy='deploy.sh'
 alias cleanup='_cleanup'
 
 cat << EOF
-#############
-TotalSim Website
-#############
+########################
+#    TotalSim Website  #
+#                      #
+########################
 Available Commands:
-    new [path]      for creating a new page, use .md suffix!
+    new [path]      For creating a new page, use .md suffix!
                     e.g. new wiki/HONDA/wikipage.md
                     e.g. new news/newspage.md
-    serve           for testing website locally
-    deploy          for deploying website to production
-    cleanup         for cleaning path and aliases after done working with website
-    user [username] [group]
+    serve           For testing website locally.
+    deploy          For deploying website to production.
+    cleanup         For cleaning path and aliases after 
+                    done working with website.
 EOF
 
 
@@ -41,6 +42,7 @@ function _cleanup(){
 }
 
 function _serve(){
+    auth --config="$DIRECTORY/auth.toml" --locations="$DIRECTORY/src/sites-enabled/default" --passwords="$DIRECTORY/src/auth/.htpasswd"
     wiki -config="$DIRECTORY/src/config.toml" -directory="$DIRECTORY/content/wiki" -replace="DIRECTORY"
     rm -rf public 
     hugo server -w --baseUrl="http://localhost:1313" -D -F --source="$DIRECTORY/src" --config="$DIRECTORY/src/config.toml"

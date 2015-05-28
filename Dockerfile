@@ -22,10 +22,12 @@ RUN cd /site-source && hugo --baseUrl="http://localhost" --source="./src" --conf
 
 RUN cp -r /site-source/src/public /app/
 
+RUN cp -r /site-source/src/uploads /var/uploads/
+
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 ADD ./src/sites-enabled/ /etc/nginx/sites-enabled/
-ADD auth/ /etc/nginx/auth/
+ADD ./src/auth/ /etc/nginx/auth/
 
 EXPOSE 80
 

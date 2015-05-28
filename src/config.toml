@@ -1,4 +1,4 @@
-baseurl = "http://pgruenbacher.github.io/totalsimPublic"
+baseurl = "http://pgruenbacher.github.io/totalsimPublic/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 
